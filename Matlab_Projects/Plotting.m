@@ -1,0 +1,19 @@
+clear all
+syms x t P(x, t)
+P(t, x) = (1 + t^2/x)^(-((x+1)/2));
+fplot(P(t, 1), [-3, 3], 'DisplayName', 'P(x, 1)', 'Color', [0 0.447 0.741],...
+    'LineWidth', 2); 
+hold on
+fplot(P(t, 11),[-3, 3], 'DisplayName', 'P(x, 11)', 'Color', [0.85 0.325 0.098],...
+    'LineWidth', 2);
+axes1 = gca;
+xlabel({'t'}, 'FontAngle', 'italic', 'FontName', 'Times New Roman');
+title('The Student t distribution function');
+ylabel({'P(x, t)'}, 'FontAngle', 'italic', 'FontName', 'Times New Roman');
+set(axes1, 'FontName', 'Times New Roman', 'FontSize', 20, 'XGrid', 'on', 'YGrid',...
+    'on');
+legend1 = legend(axes1, 'show');
+set(legend1,...
+    'Position', [0.666 0.708 0.229 0.187],...
+    'FontAngle', 'italic',...
+    'FontSize', 14);
